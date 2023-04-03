@@ -175,9 +175,6 @@ body{
 
 
 @media(max-width:768px){
-    #header2{
-        width: 330px;
-    }
     #difficult-lvl-page{
         width: 330px;
         height: 600px;
@@ -318,8 +315,11 @@ body{
 }
 
 @media(max-width:768px){
+    #header2{
+        width: 330px;
+    }
     #board-main{
-        width: 366px;
+        width: 362px;
         height: 530px;
     }
     #main-game{
@@ -331,7 +331,7 @@ body{
         height: 41.5px;
     }
     #numBtns{
-        width: 361.5px; 
+        width: 358px; 
         height: 43.5px;
         top: 420px;
         right: 134px;
