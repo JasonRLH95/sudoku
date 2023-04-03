@@ -18,7 +18,6 @@ body{
     justify-content: center;
     border: 2px solid #59ACCC;
     position: relative;
-    /*display: none;   ------------------------->>>>>>>> temporary*/
 }
 
 #header{ /*the sudoku login header*/
@@ -33,7 +32,7 @@ body{
     font-size: 20px;
 }
 .inputs:hover{ /*the sudoku username and password inputs while hovering with mouse*/
-    background-color: white;
+    background-color: whitesmoke;
 }
 #user-name{ /*the sudoku username input*/
     margin-bottom: 5px;
@@ -74,7 +73,6 @@ body{
 #p1,#p2 { /*the error paragraphs id*/
     position: absolute;
     color: red;
-    /* display: none; */
 }
 #p1{
     display: block;
@@ -84,6 +82,37 @@ body{
     display: block;
 }
 
+
+@media(max-width:768px){
+    #login{
+        width: 350px;
+        height: 280px;
+    }
+    #header{
+        font-size: 23px;
+    }
+    .inputs{
+        width: 190px;
+        height: 30px;
+    }
+    #user-name{
+        /* margin-bottom: -5px; */
+    }
+    #show-password,#hide-password{
+        left: 278px;
+        bottom: 92px;
+        padding: 3px;
+        width: 68px;
+        height: 36px;
+    }
+    #login-btn{
+        left: 76px;
+        bottom: 35px;
+    }
+    #p2{
+        bottom: 56px;
+    }
+}
 
 
 
@@ -125,9 +154,45 @@ body{
     color: white;
     cursor: pointer;
 }
+#lvl1:hover{
+    background-color: green;
+}
+#lvl2:hover{
+    background-color: orange;
+}
+#lvl3:hover{
+    background-color: red;
+}
+#lvl1:active{
+    background-color:rgba(0, 128, 0, 0.781);
+}
+#lvl2:active{
+    background-color: rgba(255, 166, 0, 0.795);
+}
+#lvl3:active{
+    background-color: rgba(255, 0, 0, 0.781);
+}
 
 
-
+@media(max-width:768px){
+    #difficult-lvl-page{
+        width: 400px;
+        height: 600px;
+    }
+    #secHeader1{
+        font-size: 20px;
+        margin-top: -50px;
+    }
+    #dif-lvl-options{
+        width: 200px;
+        flex-direction: column;
+        align-content:space-around ;
+    }
+    .dif-lvl{
+        width: 200px;
+        margin-bottom: 20px;
+    }
+}
 
 
 
@@ -140,7 +205,7 @@ body{
 /* game page */
 #main-game-page{
     margin: 0 auto;
-    display: none; /*זמני*/
+    display: none;
 }
 #header2{
     width: 500px;
@@ -151,16 +216,23 @@ body{
     font-family: 'Indie Flower', cursive;
     font-size: 40px;
 }
+#board-main{
+    position: relative;
+    /* background-color: red; */
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
 #board{
     position: relative;
-    width: 800px;
+    width: 500px;
     margin: 0 auto;
     display: none;
 }
 #main-game{
     width: 416px;
     height: 452px;
-    margin: 0 auto;
+    margin: 0 ;
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
@@ -196,7 +268,7 @@ body{
     border: 2px solid black;
     position: absolute;
     top: 0;
-    right: 100px;
+    right: 0;
 }
 .numBtnsTile{
     width: 44px;
@@ -214,8 +286,47 @@ body{
     background-color: lightgrey;
 }
 #startBtn{
-    display: none; /* זמני*/
+    width: 150px;
+    height: 30px;
+    background-color: #59ACCC;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none;
 }
 #finishBtn{
-    display: none; /* זמני*/
+    width: 150px;
+    height: 30px;
+    background-color: #59ACCC;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left: 180px;
+    bottom: 0;
+    display: none;
 }
+
+/* @media(max-width:768px){
+    #board-main{
+        width: 500px;
+        height: 500px;
+    }
+    #board{
+        width: 500px;
+    }
+    #main-game{
+        margin: 0;
+    }
+    #numBtns{
+        right: 0;
+    }
+    
+} */

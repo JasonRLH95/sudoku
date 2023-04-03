@@ -10,16 +10,16 @@
 <body>
     <div id="login">
         <h1 id="header">Sudoku login</h1>
-        <input placeholder="Username" type="text" id="user-name" class="inputs"><br>
+        <input oninput="saveName()" placeholder="Username" type="text" id="user-name" class="inputs"><br>
         <!-- <p id="p1" name="p1">1</p> -->
-        <input placeholder="Password" type="password" id="password" class="inputs">
+        <input oninput="savePass()" placeholder="Password" type="password" id="password" class="inputs">
         <button id="show-password" onclick="showOrHidePassword()"><Span id="show-password-span">Show</Span> password</button>
         <!-- <p id="p2" name="p2">2</p> -->
         <button id="login-btn" onclick="checkLogin()">login</button>
     </div>
     <div id="difficult-lvl-page">
         <h1 id="header1">Hello there <span id="usernamespan"></span></h1>
-        <h2>Choose the level difficulty:</h2>
+        <h2 id="secHeader1">Choose the level difficulty:</h2>
         <div id="dif-lvl-options">
             <div id="lvl1" class="dif-lvl" onclick="btn1()">1</div>
             <div id="lvl2" class="dif-lvl" onclick="btn2()">2</div>
@@ -28,13 +28,15 @@
     </div>
     <div id="main-game-page">
         <h1 id="header2">Sudoku</h1>
-        <div id="board">
-            <div id="main-game"></div>
-            <div id="numBtns"></div>
+        <div id="board-main">
+            <div id="board">
+                <div id="main-game"></div>
+                <div id="numBtns"></div>
+            </div>
+            <br>
+            <button id="startBtn" onclick="playAgain()">Start again</button>
+            <button id="finishBtn" onclick="finish()">Finish game</button>
         </div>
-        <br>
-        <button id="startBtn" onclick="playAgain()">Start again</button>
-        <button id="finishBtn" onclick="finish()">Finish game</button>
     </div>
     <script src='./script.js'></script>
 </body>

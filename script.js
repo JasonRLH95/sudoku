@@ -6,8 +6,10 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------
 
 // משתני עזר להמשך
-const username = 'abcd';
-const password = '1234';
+// const username = 'abcd';
+// const password = '1234';
+var username ='';
+var password = '';
 var temp = 0;
 var numButton = null;
 var tile = null;
@@ -24,35 +26,74 @@ var tempCheckMatrix = [
     []
 ];
 
+//temp
+
+let nameInput= document.getElementById('user-name');
+let passInput= document.getElementById('password');
+const saveName=()=>{
+    username=nameInput.value;
+    console.log(username)
+    return username
+}
+const savePass=()=>{
+    password=passInput.value;
+    console.log(password)
+    return password;
+}
+const validation=()=>{
+
+}
+
 // כפתור לוגין בודק את פרטי המשתמש בעת ההתחברות
 function checkLogin(){
     let loginPage = document.getElementById('login');
     let paragraph1 = document.createElement('p');
     let paragraph2 = document.createElement('p');
     let cnt = 0;
-    let inputBox1 = document.getElementById('user-name');
-    let inputBox2 = document.getElementById('password');
+    // let inputBox1 = document.getElementById('user-name');
+    // let inputBox2 = document.getElementById('password');
     let after = 0;
-    if(inputBox1.value === username){
-        cnt++
+    // console.log(inputBox1.value)
+    if(username.length===0&&password.length===0){
+        return alert('must insert name and password first')
+    }
+    if(username.length>10||password.length>10){
+        return alert('username and password length could be maximum of 10 characters length ')
+    }
+    if(username.length!==0){
+        after = setTimeout(checkAgain, 4000);
+        for(let i=0;i<username.length;i++){
+            if(username[i]<='z'&&username[i]>='a'){
+                continue;
+            }
+            if(username[i]<='Z'&&username[i]>='A'){
+                continue;
+            }
+            else{
+                loginPage.appendChild(paragraph1);
+                paragraph1.setAttribute('id','p1');
+                paragraph1.innerHTML = 'Fill Username only with English letters!';
+                return;
+            }
+        }
+        cnt++;
         paragraph1.remove('id');
     }
-    if(inputBox2.value === password){
-        cnt++
-        paragraph2.remove('id');
-    }
-    if(inputBox1.value != username || inputBox2 != password){
-        if(inputBox1.value != username){
-            loginPage.appendChild(paragraph1);
-            paragraph1.setAttribute('id','p1');
-            paragraph1.innerHTML = 'The Username is not correct';
-        }
-        if(inputBox2.value != password){
-            loginPage.appendChild(paragraph2);
-            paragraph2.setAttribute('id','p2');
-            paragraph2.innerHTML = 'The password is not correct';
-        }
+    if(password.length!==0){
         after = setTimeout(checkAgain, 4000);
+        for(let i=0;i<password.length;i++){
+            if(password[i]>=0&&password[i]<=9){
+                continue;
+            }
+            else{
+                loginPage.appendChild(paragraph2);
+                paragraph2.setAttribute('id','p2');
+                paragraph2.innerHTML = 'Fill Password only with numbers!';
+                return;
+            }
+        }
+        cnt++;
+        paragraph2.remove('id');
     }
     if(cnt === 2){
         let loginOk = document.getElementById('login')
@@ -71,7 +112,6 @@ function checkLogin(){
 // ולהעלים אותן לאחר זמן מסויים שהגדרנו ל4 שניות, כך שאם נלחץ על כפתור הלוגין פעם נוספת לא ייווצר מצב
 // שנוצרות הודעות שגיאה אחת על גבי השנייה, אלא הודעת שגיאה אחת בלבד
 function checkAgain(){
-    // debugger
     let paragraph1 = document.getElementById('p1');
     let paragraph2 = document.getElementById('p2');
     if(paragraph1 != null || paragraph2 != null){
@@ -500,7 +540,7 @@ const easyOptions = [// בערך 20 בלוקים חסרים
         ['9','8','.','5','6','.','.','7','1'],
         ['.','.','.','2','9','1','.','8','6'],
         ['1','5','6','8','7','3','2','9','4'],
-        ['8','.','3','6','5','7','1','5','9'],
+        ['8','.','3','6','4','7','1','5','9'],
         ['7','.','.','3','.','5','6','4','2'],
         ['4','.','.','9','.','.','.','.','8']
     ],
@@ -571,7 +611,7 @@ const middleOptions = [// בערך 30 בלוקים חסרים
         ['.','.','2','5','.','.','3','.','1'],
         ['.','.','.','2','9','1','.','.','6'],
         ['.','.','6','8','7','3','2','9','4'],
-        ['8','.','.','6','5','7','.','.','9'],
+        ['8','.','.','6','4','7','.','.','9'],
         ['7','.','1','.','8','.','.','4','2'],
         ['4','6','5','.','1','.','.','.','8']
     ],
