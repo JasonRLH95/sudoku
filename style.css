@@ -314,19 +314,32 @@ body{
     display: none;
 }
 
-/* @media(max-width:768px){
+@media(max-width:768px){
     #board-main{
-        width: 500px;
-        height: 500px;
-    }
-    #board{
-        width: 500px;
+        width: 366px;
+        height: 530px;
     }
     #main-game{
-        margin: 0;
+        width: 362px;
+        height: 393.5px;
+    } 
+    .tile{
+        width: 38px;
+        height: 41.5px;
     }
     #numBtns{
-        right: 0;
+        width: 361.5px; 
+        height: 43.5px;
+        top: 420px;
+        right: 134px;
+        display: flex;
     }
-    
-} */
+    .numBtnsTile{
+        width: 38px;
+        height: 41.5px;
+        flex-direction: row;
+    }
+    #finishBtn{
+        left: 216px;
+    }
+}
