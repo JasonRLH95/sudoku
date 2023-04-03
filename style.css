@@ -95,9 +95,6 @@ body{
         width: 190px;
         height: 30px;
     }
-    #user-name{
-        /* margin-bottom: -5px; */
-    }
     #show-password,#hide-password{
         left: 278px;
         bottom: 92px;
