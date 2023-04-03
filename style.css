@@ -175,6 +175,9 @@ body{
 
 
 @media(max-width:768px){
+    #header2{
+        width: 330px;
+    }
     #difficult-lvl-page{
         width: 330px;
         height: 600px;
