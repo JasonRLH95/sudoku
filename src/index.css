@@ -1,0 +1,419 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Bungee+Spice&family=Indie+Flower&display=swap');
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgba(43, 153, 226, 0.342);
+    font-size: 100%;
+}
+/* ----------------------------------- */
+/* login page */
+
+
+.login{
+    min-width: 300px;
+    width: 60%;
+    max-width: 700px;
+    min-height: 350px;
+    height: 40vw;
+    max-height: 500px;
+    background-color: lightgrey;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid #59ACCC;
+    position: relative;
+    font-size: 100%;
+}
+
+.login_mainHeader{
+    /* min-width: 210px;
+    width: 70%;
+    max-width: 490px;
+    height: 15%; */
+    font-family: 'Bungee Spice', cursive;
+    font-size: clamp(27px, 5vw, 70px);
+}
+.login_inputDiv{
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    min-width: 230px;
+    width: 60%;
+    position: relative;
+}
+.label_username{
+    width: 100%;
+    font-size: clamp(16px, 2vw, 24px);
+    text-align: left;
+    margin: 0 auto 20px;
+}
+.login_input{ /*the sudoku username and password inputs*/
+    width: 100%;
+    height: 40px;
+    border: 2px solid #59ACCC;
+    font-size: 20px;
+}
+.login_input:hover{ /*the sudoku username and password inputs while hovering with mouse*/
+    background-color: whitesmoke;
+}
+.login_alert{
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    color: red;
+    margin: 5px auto 0;
+    font-size: clamp(16px, 2vw, 24px);
+}
+.login_btn{ /*the sudoku login button*/
+    min-width: 100px;
+    width: 30%;
+    max-width: 250px;
+    min-height: 35px;
+    height: 11%;
+    max-height: 50px;
+    font-size: clamp(20px, 3vw, 30px);
+    background-color: #59ACCC;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+.login_btn:hover{ /*the sudoku login button while hovering with mouse*/
+    background-color: rgb(78, 154, 184);
+}
+.login_btn:active{ /*the sudoku login button while clicking*/
+    background-color: #59ACCC;
+}
+
+
+
+
+
+
+/* choose difficult lvl page */
+.difficult_lvl_page{
+    /* width: 600px;
+    height: 400px; */
+    min-width: 300px;
+    width: 60%;
+    max-width: 700px;
+    min-height: 350px;
+    height: 40vw;
+    max-height: 500px;
+
+    background-color: lightgrey;
+    margin: 80px auto;
+    border: 3px solid #59ACCC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Aref Ruqaa Ink', serif;
+}
+.diff_mainHeader{
+    font-size: clamp(27px, 5vw, 70px);
+    margin: 0;
+}
+.diff_subHeader{
+    font-size: clamp(16px, 3vw, 30px);
+    /* background-color: red; */
+    margin: 0;
+}
+.dif_lvl_options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    /* background-color: red; */
+    width: 85%;
+    margin-bottom: 20px;
+}
+.dif-lvl{
+    /* width: ; */
+    width: 120px;
+    height: 100px;
+    background-color: #59ACCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+#lvl1:hover{
+    background-color: green;
+}
+#lvl2:hover{
+    background-color: orange;
+}
+#lvl3:hover{
+    background-color: red;
+}
+#lvl1:active{
+    background-color:rgba(0, 128, 0, 0.781);
+}
+#lvl2:active{
+    background-color: rgba(255, 166, 0, 0.795);
+}
+#lvl3:active{
+    background-color: rgba(255, 0, 0, 0.781);
+}
+
+
+@media(max-width:768px){
+    .difficult_lvl_page{
+        height: fit-content;
+        padding-bottom: 30px;
+    }
+    .diff_subHeader{
+        margin-top: 20px;
+    }
+    .dif_lvl_options{
+        margin-top: 50px;
+        width: 100%;
+        flex-direction: column;
+        align-content: space-around;
+    }
+    .dif-lvl{
+        min-width: 150px;
+        width: 50%;
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* game page */
+.main_game_page{
+    margin: 0 auto;
+    /* display: none; */
+}
+.game_mainHeader{
+    width: 500px;
+    margin: 20px auto;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+}
+.board_main{
+    position: relative;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    /* background-color: green; */
+}
+.board{
+    /* background-color: red; */
+    /* position: relative; */
+    /* width: 500px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90%;
+    /* height: 455px; */
+    margin: 0 auto;
+}
+.main_game{
+    /* background-color: red; */
+    /* width: 416px; */
+    /* height: 452px; */
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    /* display: none; */
+    /* background-color: red; */
+}
+.tile{
+    width: calc(500px/9 - 2); /*2px of border size  | 44px*/
+    height: calc(500px/9 - 2);/*2px of border size  | 48px*/
+    width: 10px;
+    height: 10px;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.tile:hover{
+    background-color: whitesmoke;
+}
+.tile:active, .numsBtnsTile:active{
+    background-color: darkgrey;
+}
+/* .horizontal-line{
+    border-bottom: 2px solid black;
+}
+.vertical-line{
+    border-right: 2px solid black;
+} */
+.numBtnsd{
+    margin-top:1px;
+    width: 46px;
+    height: 450px;
+    border: 2px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.numBtnsTiled{
+    width: 44px;
+    height: 48px;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.tileSelected{
+    background-color: lightgrey;
+}
+#startBtn{
+    width: 150px;
+    height: 30px;
+    background-color: #59ACCC;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* display: none; */
+}
+#finishBtn{
+    width: 150px;
+    height: 30px;
+    background-color: #59ACCC;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left: 180px;
+    bottom: 0;
+    /* display: none; */
+}
+
+/* @media(max-width:768px){
+    #header2{
+        width: 330px;
+    }
+    #board-main{
+        width: 362px;
+        height: 530px;
+    }
+    #main-game{
+        width: 362px;
+        height: 393.5px;
+    } 
+    .tile{
+        width: 38px;
+        height: 41.5px;
+    }
+    #numBtns{
+        width: 358px; 
+        height: 43.5px;
+        top: 420px;
+        right: 134px;
+        display: flex;
+    }
+    .numBtnsTile{
+        width: 38px;
+        height: 41.5px;
+        flex-direction: row;
+    }
+    #finishBtn{
+        left: 216px;
+    }
+} */
+
+
+/* --------------------------------------- */
+.sudoku-grid {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    border: 2px solid black;
+    width: 85%;
+    height: 100%;
+}
+
+.sudoku-row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.sudoku-row:nth-child(3), .sudoku-row:nth-child(6){
+    border-bottom: 3px solid black;
+}
+
+.sudoku_cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    width: calc(500px/9 - 2); /*2px of border size  | 44px*/
+    height: calc(500px/9 - 2);/*2px of border size  | 48px*/
+    border: 1px solid grey;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sudoku_cell:nth-child(3), .sudoku_cell:nth-child(6){
+    border-right: 3px solid black;
+}
+
+.sudoku_cell:hover{
+    background-color: white;
+}
+.sudoku_cell:active, .numsBtnsTile:active{
+    background-color: darkgrey;
+}
+
+.numBtns{
+    border: 3px solid black;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+}
+.numBtnsTile{
+    width: 100%;
+    height: calc(100%/9 - 1.5px);
+    border: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.x{
+    background-color: red;
+}
+/* --------------------------------------- */
