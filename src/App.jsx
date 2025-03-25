@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter} from 'react-router-dom';
+import { Routes, Route, BrowserRouter} from 'react-router-dom';
 import './App.css'
 import Login from './components/Login';
 import DifficultyPage from './components/DifficultyPage';
@@ -13,15 +13,15 @@ function App() {
   const [lvl, setLvl] = useState(0);
   return (
     <div className='App_container'>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<RepairSite/>}/>
           <Route path='/temp' element={<Login username={username} setUsername={setUsername}/>}/>
           <Route path='/choose_difficulty' element={<DifficultyPage username={username} setLvl={setLvl} lvl={lvl}/>}/>
-          <Route path='/sudoku/game' element={<MainGame username={username} lvl={lvl}/>}/>
+          <Route path='/game' element={<MainGame username={username} lvl={lvl}/>}/>
           <Route path='*' element={<Page404/>}/>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   )
 }
