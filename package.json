@@ -1,7 +1,7 @@
 {
   "name": "sudoku",
   "private": true,
-  "homepage": "https://jasonrlh95.github.io/sudoku/",
+  "homepage": "https://jasonrlh95.github.io/sudoku",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
