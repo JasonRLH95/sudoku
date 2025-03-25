@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function DifficultyPage({ username, setLvl, lvl }) {
+export default function DifficultyPage({ username, setLvl, lvl, setPage }) {
     // const [lvl, setLvl] = useState(0);
-    const nav = useNavigate();
+    // const nav = useNavigate();
     useEffect(()=>{
         if(lvl !== 0){
-            return nav("/sudoku");
+            return setPage(3);
+            // return nav("/sudoku");
         }
     },[lvl])
     return (

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function Login({ username, setUsername }) {
+export default function Login({ username, setUsername, setPage }) {
     const [alertText, setAlertText] = useState("");
     const [alertFlag, setAlertFlag] = useState(false);
 
-    const nav = useNavigate();
+    // const nav = useNavigate();
     const validate = () => {
         if(username === ""){
             return alert("Must fill username field");
@@ -21,7 +21,8 @@ export default function Login({ username, setUsername }) {
             valid = true;
         }
         if(valid){
-            return nav("/choose_difficulty")
+            return setPage(2);
+            // return nav("/choose_difficulty")
         }
         
     }

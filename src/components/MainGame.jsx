@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import NumBtn from './NumBtn';
 
-export default function MainGame({ username, lvl }) {
+export default function MainGame({ username, lvl, setPage }) {
 
     const [gameBoard, setGameBoard] = useState(generateSudokuBoard(lvl));// from local storage
     const [numData, setNumData] = useState(null);

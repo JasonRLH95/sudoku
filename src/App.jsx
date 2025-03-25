@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter} from 'react-router-dom';
+// import { Routes, Route, BrowserRouter} from 'react-router-dom';
 import './App.css'
 import Login from './components/Login';
 import DifficultyPage from './components/DifficultyPage';
@@ -11,17 +11,19 @@ function App() {
   
   const [username, setUsername] = useState("");
   const [lvl, setLvl] = useState(0);
+  const [page, setPage] = useState(0);
+
+  const renderPage =()=>{
+    switch(page){
+      case 0: <RepairSite setPage={setPage}/>
+      case 1: <Login username={username} setUsername={setUsername} setPage={setPage}/>
+      case 2: <DifficultyPage username={username} setLvl={setLvl} lvl={lvl} setPage={setPage}/>
+      case 3: <MainGame username={username} lvl={lvl} setPage={setPage}/>
+    }
+  }
   return (
     <div className='App_container'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<RepairSite/>}/>
-          <Route path='/temp' element={<Login username={username} setUsername={setUsername}/>}/>
-          <Route path='/choose_difficulty' element={<DifficultyPage username={username} setLvl={setLvl} lvl={lvl}/>}/>
-          <Route path='/game' element={<MainGame username={username} lvl={lvl}/>}/>
-          <Route path='*' element={<Page404/>}/>
-        </Routes>
-      </BrowserRouter>
+      {renderPage()}
     </div>
   )
 }
