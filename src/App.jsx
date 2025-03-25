@@ -15,10 +15,10 @@ function App() {
     <div className='App_container'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<RepairSite/>}/>
+          <Route path='/sudoku' element={<RepairSite/>}/>
           <Route path='/temp' element={<Login username={username} setUsername={setUsername}/>}/>
           <Route path='/choose_difficulty' element={<DifficultyPage username={username} setLvl={setLvl} lvl={lvl}/>}/>
-          <Route path='/sudoku' element={<MainGame username={username} lvl={lvl}/>}/>
+          <Route path='/sudoku/game' element={<MainGame username={username} lvl={lvl}/>}/>
           <Route path='*' element={<Page404/>}/>
         </Routes>
       </BrowserRouter>
